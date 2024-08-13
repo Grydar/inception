@@ -15,15 +15,5 @@ clean: down
 	rm -rf ~/data/mariadb/*
 
 create_dirs:
-	mkdir -p $(DATA_DIR)/mariadb
-	mkdir -p $(DATA_DIR)/wordpress
-
-# OS specific part
-UNAME_S := $(shell uname -s)
-ifeq ($(UNAME_S),Linux)
-    DATA_DIR := /home/$(USER)/data
-else ifeq ($(UNAME_S),Darwin)
-    DATA_DIR := /Users/$(USER)/data
-else
-    $(error Unsupported OS: $(UNAME_S))
-endif
+	sudo mkdir -p ~/data/mariadb
+	sudo mkdir -p ~/data/wordpress

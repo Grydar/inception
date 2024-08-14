@@ -10,10 +10,10 @@ down:
 
 clean: down
 	docker system prune -af
+	rm -rf ~/data
 	docker volume rm srcs_mariadb_data srcs_wordpress_data
-	rm -rf ~/data/wordpress/*
-	rm -rf ~/data/mariadb/*
 
 create_dirs:
-	sudo mkdir -p ~/data/mariadb
-	sudo mkdir -p ~/data/wordpress
+	mkdir -p ~/data
+	mkdir -p ~/data/mariadb
+	mkdir -p ~/data/wordpress
